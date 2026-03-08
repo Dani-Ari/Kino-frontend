@@ -24,6 +24,7 @@ async function submitMovie(event) {
     if (response.ok) {
         const data = await response.json();
         alert('Movie added: ' + data.title)
+        window.location.href = 'movies.html'
     } else {
         alert('Something went wrong!')
     }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Showing</title>
+</head>
+
+<body>
+    <form id="addShowingForm">
+        <div class="form-group">
+            <label for="movie">Movie</label>
+            <select id="movie" required></select>
+        </div>
+
+        <div class="form-group">
+            <label for="theatre">Theatre</label>
+            <select id="theatre" required></select>
+        </div>
+
+        <div class="form-group">
+            <label for="startTime">Start Time</label>
+            <input type="datetime-local" id="startTime" required>
+        </div>
+
+        <button type="submit">Add Showing</button>
+    </form>
+    <script src="js/add-showing.js"></script>
+</body>
+
+</html>
