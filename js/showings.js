@@ -1,0 +1,35 @@
+async function fetchShowings() {
+    const response = await fetch('http://localhost:8080/showings');
+    const showings = await response.json();
+
+    const showingList = document.getElementById('showingList');
+    showingList.innerHTML = '';
+
+    showings.forEach(showing => {
+        const li = document.createElement('li');
+        li.textContent = `${showing.movie.title} - ${showing.theatre.name} - ${showing.startTime}`;
+
+        const deleteBtn = document.createElement('button')
+        deleteBtn.textContent = 'Delete'
+        deleteBtn.onclick = () => deleteShowing(showing.id)
+
+        li.appendChild(deleteBtn)
+        showingList.appendChild(li);
+    });
+}
+
+async function deleteShowing(id) {
+    if (!confirm('Are you sure? All associated reservations & tickets will also be deleted.')) return;
+
+    const response = await fetch(`http://localhost:8080/showings/${id}`, {
+        method: 'DELETE'
+    });
+
+    if (response.ok) {
+        fetchShowings();
+    } else {
+        alert('Something went wrong!')
+    }
+}
+
+fetchShowings();
