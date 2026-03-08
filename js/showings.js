@@ -7,7 +7,10 @@ async function fetchShowings() {
 
     showings.forEach(showing => {
         const li = document.createElement('li');
-        li.textContent = `${showing.movie.title} - ${showing.theatre.name} - ${showing.startTime}`;
+        const ageLimit = showing.movie.ageLimit ? `${showing.movie.ageLimit}+` : 'All ages';
+        const date = new Date(showing.startTime).toLocaleString('da-DK');
+
+        li.textContent = `${showing.movie.title} - ${ageLimit} - ${showing.theatre.name} - ${date}`;
 
         const deleteBtn = document.createElement('button')
         deleteBtn.textContent = 'Delete'
