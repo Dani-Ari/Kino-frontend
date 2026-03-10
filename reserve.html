@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserve Seats</title>
+</head>
+
+<body>
+
+<nav>
+<a href="movies.html">Movies</a> |
+<a href="showings.html">Showings</a> |
+<a href="add-movie.html">Add Movie</a> |
+<a href="add-showing.html">Add Showing</a> |
+<a href="reserve.html">Reserve Seats</a> |
+<a href="reservations.html">Reservations</a> |
+<a href="sell-tickets.html">Sell Tickets</a>
+</nav>
+
+<h1>Reserve Seats</h1>
+
+<form id="reserveForm">
+
+<label>Showing</label>
+<select id="showing"></select>
+
+<br><br>
+
+<label>Name</label>
+<input id="name" required>
+
+<br><br>
+
+<label>Phone</label>
+<input id="phone" required>
+
+<br><br>
+
+<label>Select Seats</label>
+<br>
+<div id="seatContainer"></div>
+
+<br><br>
+
+<button type="submit">Reserve</button>
+
+</form>
+
+<script src="js/api.js"></script>
+<script src="js/reserve.js"></script>
+
+</body>
+</html>
