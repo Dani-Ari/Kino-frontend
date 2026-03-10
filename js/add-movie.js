@@ -13,7 +13,7 @@ async function submitMovie(event) {
         ageLimit: ageLimit
     };
 
-    const response = await fetch('http://localhost:8080/movies', {
+    const response = await fetch(`${API_BASE}/movies`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

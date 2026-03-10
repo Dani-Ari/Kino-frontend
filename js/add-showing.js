@@ -1,7 +1,7 @@
 const form = document.getElementById('addShowingForm');
 
 async function fetchMovies() {
-    const response = await fetch('http://localhost:8080/movies');
+    const response = await fetch(`${API_BASE}/movies`);
     const movies = await response.json();
 
     const movieSelect = document.getElementById('movie');
@@ -14,7 +14,7 @@ async function fetchMovies() {
 }
 
 async function fetchTheatres() {
-    const response = await fetch('http://localhost:8080/theatres');
+    const response = await fetch(`${API_BASE}/theatres`);
     const theatres = await response.json();
 
     const theatreSelect = document.getElementById('theatre');
@@ -39,7 +39,7 @@ async function submitShowing(event) {
         startTime: startTime
     };
 
-    const response = await fetch('http://localhost:8080/showings', {
+    const response = await fetch(`${API_BASE}/showings`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(showing)
